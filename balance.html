@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #95d097;
+            --dark-bg: #1a251c;
+            --card-bg: #2c392f;
+            --card-darker: #1f2922;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        .header {
+            background-color: var(--primary-green);
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .back-button {
+            color: var(--dark-bg);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        .balance-container {
+            margin-top: 80px;
+            padding: 1rem;
+        }
+
+        .phone-number {
+            background-color: var(--card-bg);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .balance-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .balance-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-switch {
+            width: 40px;
+            height: 24px;
+            background-color: var(--primary-green);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            right: 2px;
+        }
+
+        .usage-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-circle {
+            width: 60px;
+            height: 60px;
+        }
+
+        .progress-circle circle {
+            fill: none;
+            stroke-width: 8;
+        }
+
+        .progress-circle .progress-bg {
+            stroke: #463b3b;
+        }
+
+        .progress-circle .progress {
+            stroke: var(--primary-green);
+            stroke-linecap: round;
+        }
+
+        .date-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .bottom-nav {
+            background-color: var(--dark-bg);
+            border-top: 1px solid var(--card-bg);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-size: 0.75rem;
+        }
+
+        .nav-item i {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-item.active {
+            color: var(--primary-green);
+        }
+
+        .nav-item:not(.active) {
+            color: #ffffff80;
+        }
+        .main-content {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header d-flex align-items-center">
+        <a href="#" class="back-button me-3">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1 class="h5 mb-0">Balance</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content balance-container">
+        <div class="phone-number">
+            <span>254747501436</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="balance-card">
+            <div class="balance-amount">KSh. 0.01</div>
+            <div class="toggle-container">
+                <div class="toggle-switch"></div>
+                <span>Data Manager Enabled</span>
+            </div>
+        </div>
+
+        <!-- Data Usage Card -->
+        <div class="usage-card">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="h5 mb-2">Daily Data 1GB</h2>
+                    <div>661.36 MB left</div>
+                </div>
+                <svg class="progress-circle" viewBox="0 0 36 36">
+                    <circle class="progress-bg" cx="18" cy="18" r="14" />
+                    <circle class="progress" cx="18" cy="18" r="14"
+                            stroke-dasharray="87.96" stroke-dashoffset="30.786"
+                            transform="rotate(-90 18 18)" />
+                    <text x="18" y="18" text-anchor="middle" dy=".3em" 
+                          fill="white" font-size="10">65%</text>
+                </svg>
+            </div>
+            <div class="date-info">
+                <i class="far fa-calendar"></i>
+                <span>Start Date</span>
+                <span class="ms-auto">January 6, 2025 08:22</span>
+            </div>
+            <div class="date-info">
+                <i class="far fa-calendar"></i>
+                <span>Expiry Date</span>
+                <span class="ms-auto">January 7, 2025 08:22</span>
+            </div>
+        </div>
+
+        <!-- Voice Usage Card -->
+        <div class="usage-card">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div>
+                    <h2 class="h5 mb-2">Daily Voice 50minutes</h2>
+                    <div>5.00 Minutes left</div>
+                </div>
+                <svg class="progress-circle" viewBox="0 0 36 36">
+                    <circle class="progress-bg" cx="18" cy="18" r="14" />
+                    <circle class="progress" cx="18" cy="18" r="14"
+                            stroke-dasharray="87.96" stroke-dashoffset="79.164"
+                            transform="rotate(-90 18 18)" />
+                    <text x="18" y="18" text-anchor="middle" dy=".3em" 
+                          fill="white" font-size="10">10%</text>
+                </svg>
+            </div>
+            <div class="date-info">
+                <i class="far fa-calendar"></i>
+                <span>Start Date</span>
+                <span class="ms-auto">January 5, 2025 16:06</span>
+            </div>
+            <div class="date-info">
+                <i class="far fa-calendar"></i>
+                <span>Expiry Date</span>
+                <span class="ms-auto">January 6, 2025 16:06</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="d-flex justify-content-between">
+            <a href="support.html" class="nav-item">
+                <i class="fas fa-headset"></i>
+                <span>Support</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundles - Faiba Mobile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #95d097;
+            --dark-bg: #1a251c;
+            --card-bg: #2c392f;
+            --darker-green: #152018;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding-bottom: 80px;
+        }
+
+        .header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .status-bar {
+            background-color: var(--primary-green);
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            color: white;
+        }
+
+        .phone-number {
+            background-color: var(--darker-green);
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-icons {
+            display: flex;
+            justify-content: space-around;
+            margin: 2rem 0;
+        }
+
+        .service-icon {
+            text-align: center;
+            color: #4a9c4d;
+        }
+
+        .service-icon.active {
+            color: var(--primary-green);
+        }
+
+        .service-icon i {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .bundle-card {
+            background-color: var(--darker-green);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .bundle-minutes {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .validity {
+            color: #ffffff80;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .bottom-nav {
+            background-color: var(--dark-bg);
+            border-top: 1px solid var(--card-bg);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary-green);
+            text-decoration: none;
+            font-size: 0.75rem;
+        }
+
+        .nav-item i {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-item.active {
+            color: var(--primary-green);
+        }
+
+        .nav-item:not(.active) {
+            color: #ffffff80;
+        }
+    </style>
+</head>
+<body>
+    <!-- Status Bar -->
+    <div class="status-bar d-flex justify-content-between align-items-center">
+        <div>9:33</div>
+        <div class="d-flex align-items-center gap-2">
+            <span>4G</span>
+            <i class="fas fa-signal"></i>
+            <span>50%</span>
+            <i class="fas fa-battery-half"></i>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header d-flex align-items-center">
+        <i class="fas fa-arrow-left me-3"></i>
+        <h1 class="h5 mb-0">Bundles</h1>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="phone-number d-flex justify-content-between align-items-center">
+        <div>254747501436</div>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+
+    <!-- Service Icons -->
+    <div class="service-icons">
+        <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+            <div>Data</div>
+        </div>
+        <div class="service-icon active">
+            <i class="fas fa-phone"></i>
+            <div>Voice</div>
+        </div>
+        <div class="service-icon">
+            <i class="fas fa-cube"></i>
+            <div>All in One</div>
+        </div>
+    </div>
+
+    <!-- Bundle Cards -->
+    <div class="container">
+        <h2 class="h4 mb-4">Gumzo Non-Stop (Calls Only)</h2>
+        <div class="row g-3">
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">50 Minutes</div>
+                    <div class="validity">Valid for 1 Day.</div>
+                    <div class="price">Ksh. 50.00</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">100 Minutes</div>
+                    <div class="validity">Valid for 7 Days.</div>
+                    <div class="price">Ksh. 150.00</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">200 Minutes</div>
+                    <div class="validity">Valid for 7 Days.</div>
+                    <div class="price">Ksh. 250.00</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">300 Minutes</div>
+                    <div class="validity">Valid for 30 Days.</div>
+                    <div class="price">Ksh. 350.00</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">500 Minutes</div>
+                    <div class="validity">Valid for 30 Days.</div>
+                    <div class="price">Ksh. 500.00</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="bundle-card">
+                    <div class="bundle-minutes">700 Minutes</div>
+                    <div class="validity">Valid for 30 Days.</div>
+                    <div class="price">Ksh. 700.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="d-flex justify-content-between">
+            <a href="support.html" class="nav-item">
+                <i class="fas fa-headset"></i>
+                <span>Support</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
