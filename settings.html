@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - Faiba Mobile</title>
+    <title>Settings - FunFee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -19,13 +19,6 @@
             color: white;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             min-height: 100vh;
-        }
-
-        .status-bar {
-            background-color: var(--primary-green);
-            padding: 0.5rem 1rem;
-            font-size: 0.875rem;
-            color: white;
         }
 
         .header {
@@ -106,18 +99,6 @@
     </style>
 </head>
 <body>
-    <!-- Status Bar -->
-    <div class="status-bar d-flex justify-content-between align-items-center">
-        <div>9:33</div>
-        <div class="d-flex align-items-center gap-2">
-            <span>Yo tiba</span>
-            <i class="fas fa-signal"></i>
-            <span>4G</span>
-            <span>50%</span>
-            <i class="fas fa-battery-half"></i>
-        </div>
-    </div>
-
     <!-- Header -->
     <div class="header">
         <h1 class="h5 mb-0">Settings</h1>
@@ -126,18 +107,34 @@
     <!-- Menu Items -->
     <div class="container py-4">
         <a href="#" class="menu-item">
-            <i class="fas fa-mobile-alt"></i>
+            <i class="fas fa-dollar-sign"></i>
             <div class="content">
-                <div class="title">Faiba Mobile</div>
-                <div class="subtitle">Manage your mobile experience</div>
+                <div class="title">Fee Payment</div>
+                <div class="subtitle">Manage your fee payments</div>
             </div>
         </a>
 
         <a href="#" class="menu-item selected-item">
-            <i class="fas fa-wifi"></i>
+            <i class="fas fa-calendar-alt"></i>
             <div class="content">
-                <div class="title">Faiba Fixed</div>
-                <div class="subtitle">Manage your fiber connection</div>
+                <div class="title">School Events</div>
+                <div class="subtitle">View upcoming school events</div>
+            </div>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div class="content">
+                <div class="title">Indiscipline Cases</div>
+                <div class="subtitle">Monitor indiscipline cases</div>
+            </div>
+        </a>
+
+        <a href="#" class="menu-item">
+            <i class="fas fa-file-alt"></i>
+            <div class="content">
+                <div class="title">Report Cards</div>
+                <div class="subtitle">Access report cards</div>
             </div>
         </a>
 
@@ -158,14 +155,6 @@
         </a>
 
         <a href="#" class="menu-item">
-            <i class="fas fa-globe"></i>
-            <div class="content">
-                <div class="title">Explore</div>
-                <div class="subtitle">See More</div>
-            </div>
-        </a>
-
-        <a href="#" class="menu-item">
             <i class="fas fa-question-circle"></i>
             <div class="content">
                 <div class="title">FAQ</div>
@@ -177,7 +166,7 @@
             <i class="fas fa-sign-out-alt"></i>
             <div class="content">
                 <div class="title">Logout</div>
-                <div class="subtitle">Signout of your account</div>
+                <div class="subtitle">Sign out of your account</div>
             </div>
         </a>
     </div>

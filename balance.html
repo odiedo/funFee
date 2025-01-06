@@ -78,6 +78,7 @@
             background-color: var(--primary-green);
             border-radius: 12px;
             position: relative;
+            cursor: pointer;
         }
 
         .toggle-switch::after {
@@ -88,7 +89,12 @@
             background-color: white;
             border-radius: 50%;
             top: 2px;
-            right: 2px;
+            left: 2px;
+            transition: left 0.3s;
+        }
+
+        .toggle-switch.active::after {
+            left: 18px;
         }
 
         .usage-card {
@@ -109,7 +115,7 @@
         }
 
         .progress-circle .progress-bg {
-            stroke: #463b3b;
+            stroke: #7a1b1b;
         }
 
         .progress-circle .progress {
@@ -156,6 +162,7 @@
         .nav-item:not(.active) {
             color: #ffffff80;
         }
+
         .main-content {
             padding-bottom: 80px;
         }
@@ -164,84 +171,111 @@
 <body>
     <!-- Header -->
     <div class="header d-flex align-items-center">
-        <a href="#" class="back-button me-3">
+        <a href="index.html" class="back-button me-3">
             <i class="fas fa-arrow-left"></i>
         </a>
         <h1 class="h5 mb-0">Balance</h1>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content balance-container">
-        <div class="phone-number">
-            <span>254747501436</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
+<!-- Main Content -->
+<div class="main-content balance-container">
+    <div class="phone-number">
+        <span>Antony Emuria</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
 
-        <div class="balance-card">
-            <div class="balance-amount">KSh. 0.01</div>
-            <div class="toggle-container">
-                <div class="toggle-switch"></div>
-                <span>Data Manager Enabled</span>
-            </div>
+    <div class="balance-card">
+        <div class="balance-amount" id="balanceAmount">KSh. 29,800</div>
+        <div class="toggle-container">
+            <div class="toggle-switch" onclick="toggleDataManager(this)"></div>
+            <span>Automanage Fund</span>
         </div>
-
-        <!-- Data Usage Card -->
-        <div class="usage-card">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h2 class="h5 mb-2">Daily Data 1GB</h2>
-                    <div>661.36 MB left</div>
-                </div>
-                <svg class="progress-circle" viewBox="0 0 36 36">
-                    <circle class="progress-bg" cx="18" cy="18" r="14" />
-                    <circle class="progress" cx="18" cy="18" r="14"
-                            stroke-dasharray="87.96" stroke-dashoffset="30.786"
-                            transform="rotate(-90 18 18)" />
-                    <text x="18" y="18" text-anchor="middle" dy=".3em" 
-                          fill="white" font-size="10">65%</text>
-                </svg>
+    </div>
+    
+    <!-- Term 1 Usage Card -->
+    <div class="usage-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h2 class="h5 mb-2">Term 1 Fee: 27,500</h2>
+                <div>Ksh. 4,300 left</div>
             </div>
-            <div class="date-info">
-                <i class="far fa-calendar"></i>
-                <span>Start Date</span>
-                <span class="ms-auto">January 6, 2025 08:22</span>
-            </div>
-            <div class="date-info">
-                <i class="far fa-calendar"></i>
-                <span>Expiry Date</span>
-                <span class="ms-auto">January 7, 2025 08:22</span>
-            </div>
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="14" />
+                <circle class="progress" cx="18" cy="18" r="14"
+                        stroke-dasharray="87.96" stroke-dashoffset="15"
+                        transform="rotate(-90 18 18)" />
+                <text x="18" y="18" text-anchor="middle" dy=".3em" 
+                      fill="white" font-size="10">85%</text>
+            </svg>
         </div>
-
-        <!-- Voice Usage Card -->
-        <div class="usage-card">
-            <div class="d-flex justify-content-between align-items-start mb-3">
-                <div>
-                    <h2 class="h5 mb-2">Daily Voice 50minutes</h2>
-                    <div>5.00 Minutes left</div>
-                </div>
-                <svg class="progress-circle" viewBox="0 0 36 36">
-                    <circle class="progress-bg" cx="18" cy="18" r="14" />
-                    <circle class="progress" cx="18" cy="18" r="14"
-                            stroke-dasharray="87.96" stroke-dashoffset="79.164"
-                            transform="rotate(-90 18 18)" />
-                    <text x="18" y="18" text-anchor="middle" dy=".3em" 
-                          fill="white" font-size="10">10%</text>
-                </svg>
-            </div>
-            <div class="date-info">
-                <i class="far fa-calendar"></i>
-                <span>Start Date</span>
-                <span class="ms-auto">January 5, 2025 16:06</span>
-            </div>
-            <div class="date-info">
-                <i class="far fa-calendar"></i>
-                <span>Expiry Date</span>
-                <span class="ms-auto">January 6, 2025 16:06</span>
-            </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Start Date</span>
+            <span class="ms-auto">January 6, 2025</span>
+        </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Expiry Date</span>
+            <span class="ms-auto">April 7, 2025</span>
         </div>
     </div>
 
+    <!-- Term 2 Usage Card -->
+    <div class="usage-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h2 class="h5 mb-2">Term 2 Fee: 14,870</h2>
+                <div>Ksh. 19,170 left</div>
+            </div>
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="14" />
+                <circle class="progress" cx="18" cy="18" r="14"
+                        stroke-dasharray="87.96" stroke-dashoffset="87.96"
+                        transform="rotate(-90 18 18)" />
+                <text x="18" y="18" text-anchor="middle" dy=".3em" 
+                      fill="white" font-size="10">0%</text>
+            </svg>
+        </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Start Date</span>
+            <span class="ms-auto">May 1, 2025</span>
+        </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Expiry Date</span>
+            <span class="ms-auto">August 1, 2025</span>
+        </div>
+    </div>
+
+    <!-- Term 3 Usage Card -->
+    <div class="usage-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h2 class="h5 mb-2">Term 3 Fee: 10,630 </h2>
+                <div>Ksh. 29,800 left</div>
+            </div>
+            <svg class="progress-circle" viewBox="0 0 36 36">
+                <circle class="progress-bg" cx="18" cy="18" r="14" />
+                <circle class="progress" cx="18" cy="18" r="14"
+                        stroke-dasharray="87.96" stroke-dashoffset="87.96"
+                        transform="rotate(-90 18 18)" />
+                <text x="18" y="18" text-anchor="middle" dy=".3em" 
+                      fill="white" font-size="10">0%</text>
+            </svg>
+        </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Start Date</span>
+            <span class="ms-auto">September 1, 2025</span>
+        </div>
+        <div class="date-info">
+            <i class="far fa-calendar"></i>
+            <span>Expiry Date</span>
+            <span class="ms-auto">December 1, 2025</span>
+        </div>
+    </div>
+</div>
     <!-- Bottom Navigation -->
     <div class="bottom-nav">
         <div class="d-flex justify-content-between">
@@ -261,5 +295,21 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleDataManager(element) {
+            element.classList.toggle('active');
+        }
+    </script>
+    <script>
+        function toggleDataManager(element) {
+            element.classList.toggle('active');
+            const balanceAmount = document.getElementById('balanceAmount');
+            if (element.classList.contains('active')) {
+                balanceAmount.textContent = 'KSh. 53,200';
+            } else {
+                balanceAmount.textContent = 'KSh. 29,800';
+            }
+        }
+    </script>
 </body>
 </html>
