@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings - FunFee</title>
+    <title>Upcoming Events - FunFee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -11,7 +11,7 @@
             --primary-green: #95d097;
             --dark-bg: #1a251c;
             --card-bg: #2c392f;
-            --menu-hover: #2c392f;
+            --promo-green: #0a3d0c;
         }
 
         body {
@@ -23,47 +23,44 @@
 
         .header {
             background-color: var(--primary-green);
-            color: white;
+            color: var(--dark-bg);
             padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
-        .menu-item {
-            padding: 1.25rem 1rem;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            border-radius: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-item:hover {
-            background-color: var(--menu-hover);
-            color: white;
-        }
-
-        .menu-item i {
-            color: var(--primary-green);
+        .back-button {
+            color: var(--dark-bg);
             font-size: 1.5rem;
-            width: 2.5rem;
+            text-decoration: none;
         }
 
-        .menu-item .content {
-            margin-left: 1rem;
+        .main-content {
+            padding-top: 80px;
+            padding-bottom: 80px;
         }
 
-        .menu-item .title {
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+        .event-card {
+            background-color: var(--card-bg);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .menu-item .subtitle {
-            font-size: 0.9rem;
-            color: #888;
+        .event-card h5 {
+            color: var(--primary-green);
         }
 
-        .selected-item {
-            background-color: var(--menu-hover);
+        .event-card p {
+            color: #ccc;
+        }
+
+        .event-date {
+            color: var(--primary-green);
+            font-weight: bold;
         }
 
         .bottom-nav {
@@ -100,51 +97,35 @@
 </head>
 <body>
     <!-- Header -->
-    <div class="header">
-        <h1 class="h5 mb-0">Settings</h1>
+    <div class="header d-flex align-items-center">
+        <a href="index.html" class="back-button me-3">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <h1 class="h5 mb-0">Upcoming Events</h1>
     </div>
 
-    <!-- Menu Items -->
-    <div class="container py-4">
-        <a href="#" class="menu-item">
-            <i class="fas fa-dollar-sign"></i>
-            <div class="content">
-                <div class="title">Fee Payment Alert</div>
-                <div class="subtitle">Manage your fee payments</div>
-            </div>
-        </a>
-
-        <a href="#" class="menu-item">
-            <i class="fas fa-user"></i>
-            <div class="content">
-                <div class="title">Profile</div>
-                <div class="subtitle">Update your profile</div>
-            </div>
-        </a>
-
-        <a href="#" class="menu-item">
-            <i class="fas fa-info-circle"></i>
-            <div class="content">
-                <div class="title">About</div>
-                <div class="subtitle">Get to know us</div>
-            </div>
-        </a>
-
-        <a href="#" class="menu-item">
-            <i class="fas fa-question-circle"></i>
-            <div class="content">
-                <div class="title">FAQ</div>
-                <div class="subtitle">Frequently asked questions</div>
-            </div>
-        </a>
-
-        <a href="#" class="menu-item">
-            <i class="fas fa-sign-out-alt"></i>
-            <div class="content">
-                <div class="title">Logout</div>
-                <div class="subtitle">Sign out of your account</div>
-            </div>
-        </a>
+    <!-- Main Content -->
+    <div class="container main-content">
+        <div class="event-card">
+            <h5>Parent-Teacher Meeting</h5>
+            <p class="event-date">Date: January 15, 2025</p>
+            <p>Join us for a parent-teacher meeting to discuss your child's progress and address any concerns.</p>
+        </div>
+        <div class="event-card">
+            <h5>School Sports Day</h5>
+            <p class="event-date">Date: February 20, 2025</p>
+            <p>Come and cheer for your children as they participate in various sports activities.</p>
+        </div>
+        <div class="event-card">
+            <h5>Annual Science Fair</h5>
+            <p class="event-date">Date: March 10, 2025</p>
+            <p>Explore the innovative science projects created by our students and support their creativity.</p>
+        </div>
+        <div class="event-card">
+            <h5>Art Exhibition</h5>
+            <p class="event-date">Date: April 5, 2025</p>
+            <p>Visit our art exhibition to see the beautiful artworks created by our talented students.</p>
+        </div>
     </div>
 
     <!-- Bottom Navigation -->
@@ -158,7 +139,7 @@
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </a>
-            <a href="settings.html" class="nav-item active">
+            <a href="settings.html" class="nav-item">
                 <i class="fas fa-cog"></i>
                 <span>Settings</span>
             </a>

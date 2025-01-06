@@ -171,7 +171,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true">
+        <div class="modal fade" id="servicesModal" tabindex="-1" aria-labelledby="servicesModalLabel" aria-hidden="true" style="background-color: var(--dark-bg);">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content" style="background-color: var(--card-bg); color: white; border-radius: 1rem;">
                     <div class="modal-header" style="border-bottom: 1px solid var(--primary-green);">
@@ -182,9 +182,13 @@
                     </div>
                     <div class="modal-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item d-flex align-items-center" style="background-color: var(--card-bg); color: white; border: none;">
+                            <li class="list-group-item d-flex align-items-center" style="background-color: var(--card-bg); color: white; border: none;" onclick="window.location.href='report.html'">
                                 <i class="fas fa-file-alt me-3" style="color: var(--primary-green); font-size: 1.5rem;"></i>
                                 <span>Report Form</span>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center" style="background-color: var(--card-bg); color: white; border: none;" onclick="window.location.href='events.html'">
+                                <i class="fas fa-calendar-alt me-3" style="color: var(--primary-green); font-size: 1.5rem;"></i>
+                                <span>School Events</span>
                             </li>
                             <li class="list-group-item d-flex align-items-center" style="background-color: var(--card-bg); color: white; border: none;">
                                 <i class="fas fa-gavel me-3" style="color: var(--primary-green); font-size: 1.5rem;"></i>
