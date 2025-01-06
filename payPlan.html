@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bundles - Faiba Mobile</title>
+    <title>Fee Payment Plans - SchoolPay</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #95d097;
+            --primary-blue: #e96b17;
             --dark-bg: #1a251c;
-            --card-bg: #2c392f;
-            --darker-green: #152018;
+            --card-bg: #39342c;
+            --darker-blue: #0004;
         }
 
         body {
@@ -22,7 +22,7 @@
         }
 
         .header {
-            background-color: var(--primary-green);
+            background-color: var(--primary-blue);
             color: white;
             padding: 1rem;
             position: sticky;
@@ -30,58 +30,83 @@
             z-index: 1000;
         }
 
-        .phone-number {
-            background-color: var(--darker-green);
+        .fee-summary {
+            background-color: var(--darker-blue);
             color: white;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-icons {
-            display: flex;
-            justify-content: space-around;
-            margin: 2rem 0;
-        }
-
-        .service-icon {
-            text-align: center;
-            color: #4a9c4d;
-        }
-
-        .service-icon.active {
-            color: var(--primary-green);
-        }
-
-        .service-icon i {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .bundle-card {
-            background-color: var(--darker-green);
-            border-radius: 0.75rem;
             padding: 1.5rem;
             margin-bottom: 1rem;
         }
 
-        .bundle-minutes {
-            color: var(--primary-green);
+        .fee-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .plan-section {
+            background-color: var(--darker-blue);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .plan-card {
+            background-color: var(--card-bg);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .plan-amount {
+            color: var(--primary-blue);
             font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
 
-        .validity {
+        .plan-duration {
             color: #ffffff80;
             font-size: 0.875rem;
             margin-bottom: 0.5rem;
         }
 
-        .price {
-            font-size: 1.25rem;
-            font-weight: bold;
+        .completion-date {
+            color: #4CAF50;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
         }
 
+        .select-plan-btn {
+            background-color: var(--primary-blue);
+            border: none;
+            border-radius: 0.5rem;
+            color: white;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .progress {
+            height: 0.5rem;
+            margin: 1rem 0;
+            background-color: var(--card-bg);
+        }
+
+        .progress-bar {
+            background-color: var(--primary-blue);
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--card-bg);
+        }
         .bottom-nav {
             background-color: var(--dark-bg);
             border-top: 1px solid var(--card-bg);
@@ -118,98 +143,122 @@
     <!-- Header -->
     <div class="header d-flex align-items-center">
         <i class="fas fa-arrow-left me-3"></i>
-        <h1 class="h5 mb-0">Bundles</h1>
+        <h1 class="h5 mb-0">Fee Payment Plans</h1>
     </div>
 
-    <!-- Phone Number -->
-    <div class="phone-number d-flex justify-content-between align-items-center">
-        <div>254747501436</div>
-        <i class="fas fa-chevron-down"></i>
+    <!-- Fee Summary -->
+    <div class="fee-summary">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>Total Fees</div>
+            <div class="fee-amount">Ksh. 53,000</div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>Paid Amount</div>
+            <div class="text-success">Ksh. 23,200</div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>Balance</div>
+            <div class="text-warning">Ksh. 29,800</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 44%" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="text-center mt-2">
+            <small>44% paid</small>
+        </div>
     </div>
 
-    <!-- Service Icons -->
-    <div class="service-icons">
-        <div class="service-icon">
-            <i class="fas fa-mobile-alt"></i>
-            <div>Data</div>
-        </div>
-        <div class="service-icon active">
-            <i class="fas fa-phone"></i>
-            <div>Voice</div>
-        </div>
-        <div class="service-icon">
-            <i class="fas fa-cube"></i>
-            <div>All in One</div>
-        </div>
-    </div>
-
-    <!-- Bundle Cards -->
+    <!-- Payment Plans -->
     <div class="container">
-        <h2 class="h4 mb-4">Gumzo Non-Stop (Calls Only)</h2>
-        <div class="row g-3">
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">50 Minutes</div>
-                    <div class="validity">Valid for 1 Day.</div>
-                    <div class="price">Ksh. 50.00</div>
+        <h2 class="h4 mb-4">Choose Your Payment Plan</h2>
+        
+        <!-- Monthly Plans -->
+        <div class="plan-section">
+            <h3 class="section-title">Monthly Plans</h3>
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 7,450</div>
+                        <div class="plan-duration">4 monthly payments</div>
+                        <div class="completion-date">Complete by: May 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 9,933</div>
+                        <div class="plan-duration">3 monthly payments</div>
+                        <div class="completion-date">Complete by: April 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">100 Minutes</div>
-                    <div class="validity">Valid for 7 Days.</div>
-                    <div class="price">Ksh. 150.00</div>
+        </div>
+
+        <!-- Weekly Plans -->
+        <div class="plan-section">
+            <h3 class="section-title">Weekly Plans</h3>
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 2,483</div>
+                        <div class="plan-duration">12 weekly payments</div>
+                        <div class="completion-date">Complete by: April 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 3,725</div>
+                        <div class="plan-duration">8 weekly payments</div>
+                        <div class="completion-date">Complete by: March 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">200 Minutes</div>
-                    <div class="validity">Valid for 7 Days.</div>
-                    <div class="price">Ksh. 250.00</div>
+        </div>
+
+        <!-- Daily Plans -->
+        <div class="plan-section">
+            <h3 class="section-title">Daily Plans</h3>
+            <div class="row g-3">
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 497</div>
+                        <div class="plan-duration">60 daily payments</div>
+                        <div class="completion-date">Complete by: March 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">300 Minutes</div>
-                    <div class="validity">Valid for 30 Days.</div>
-                    <div class="price">Ksh. 350.00</div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">500 Minutes</div>
-                    <div class="validity">Valid for 30 Days.</div>
-                    <div class="price">Ksh. 500.00</div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="bundle-card">
-                    <div class="bundle-minutes">700 Minutes</div>
-                    <div class="validity">Valid for 30 Days.</div>
-                    <div class="price">Ksh. 700.00</div>
+                <div class="col-6">
+                    <div class="plan-card">
+                        <div class="plan-amount">Ksh. 745</div>
+                        <div class="plan-duration">40 daily payments</div>
+                        <div class="completion-date">Complete by: February 2025</div>
+                        <button class="select-plan-btn">Select Plan</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Bottom Navigation -->
-    <div class="bottom-nav">
-        <div class="d-flex justify-content-between">
-            <a href="support.html" class="nav-item">
-                <i class="fas fa-headset"></i>
-                <span>Support</span>
-            </a>
-            <a href="index.html" class="nav-item active">
-                <i class="fas fa-home"></i>
-                <span>Home</span>
-            </a>
-            <a href="settings.html" class="nav-item">
-                <i class="fas fa-cog"></i>
-                <span>Settings</span>
-            </a>
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="d-flex justify-content-between">
+                <a href="support.html" class="nav-item">
+                    <i class="fas fa-headset"></i>
+                    <span>Support</span>
+                </a>
+                <a href="index.html" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
         </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

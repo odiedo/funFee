@@ -8,11 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #95d097;
+            --primary-green: #e96b17;
             --dark-bg: #1a251c;
-            --card-bg: #2c392f;
-            --darker-green: #152018;
-            --button-green: #2c392f;
+            --card-bg: #39342c;
+            --darker-green: #1a251c;
+            --button-green: #39342c;
         }
 
         body {
@@ -24,12 +24,24 @@
 
         .header {
             background-color: var(--primary-green);
-            color: white;
-            padding: 1rem;
+            color: #fff;
+            padding: 0.2rem 2rem 0.2rem 2rem;            
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
         }
-
+        .back-button {
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
+        }
         .main-content {
-            padding: 2rem 1rem;
+            padding-top: 60px;
+            padding-bottom: 80px;
             background-color: var(--dark-bg);
         }
 
@@ -37,19 +49,21 @@
             background-color: var(--card-bg);
             border-radius: 1rem;
             padding: 2rem;
-            margin-bottom: 2rem;
+            margin: 1rem;
         }
 
         .contact-button {
-            background-color: var(--button-green);
+            background-color: #0004;
             color: var(--primary-green);
             border: none;
-            border-radius: 2rem;
-            padding: 0.75rem 2rem;
+            border-radius: 0.9rem;
+            padding: 0.75rem 3rem 0.75rem 3rem;
             margin-bottom: 1rem;
             width: 100%;
             text-align: left;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: center;
         }
 
         .contact-button i {
@@ -128,6 +142,9 @@
 <body>
     <!-- Header -->
     <div class="header">
+        <a href="index.html" class="back-button me-3">
+            <i class="fas fa-arrow-left"></i>
+        </a>
         <h1 class="h5 mb-0">Support</h1>
     </div>
 

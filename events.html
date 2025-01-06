@@ -8,10 +8,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #95d097;
+            --primary-green: #e96b17;
             --dark-bg: #1a251c;
-            --card-bg: #2c392f;
-            --promo-green: #0a3d0c;
+            --card-bg: #39342c;
+            --promo-green: #e96b17;
         }
 
         body {
@@ -24,22 +24,24 @@
         .header {
             background-color: var(--primary-green);
             color: var(--dark-bg);
-            padding: 1rem;
+            padding: 0.2rem 2rem 0.2rem 2rem;            
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
+            display: flex;
+            justify-content: space-between;
             z-index: 1000;
         }
 
         .back-button {
-            color: var(--dark-bg);
+            color: #fff;
             font-size: 1.5rem;
             text-decoration: none;
         }
 
         .main-content {
-            padding-top: 80px;
+            padding-top: 60px;
             padding-bottom: 80px;
         }
 
@@ -135,7 +137,7 @@
                 <i class="fas fa-headset"></i>
                 <span>Support</span>
             </a>
-            <a href="index.html" class="nav-item">
+            <a href="index.html" class="nav-item active">
                 <i class="fas fa-home"></i>
                 <span>Home</span>
             </a>

@@ -8,9 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #95d097;
+            --primary-green: #e96b17;
             --dark-bg: #1a251c;
-            --card-bg: #2c392f;
+            --card-bg: #39342c;
             --menu-hover: #2c392f;
         }
 
@@ -23,8 +23,21 @@
 
         .header {
             background-color: var(--primary-green);
-            color: white;
-            padding: 1rem;
+            color: #fff;
+            padding: 0.2rem 2rem 0.2rem 2rem;            
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .back-button {
+            color: #fff;
+            font-size: 1rem;
+            text-decoration: none;
         }
 
         .menu-item {
@@ -101,6 +114,9 @@
 <body>
     <!-- Header -->
     <div class="header">
+        <a href="index.html" class="back-button me-3">
+            <i class="fas fa-arrow-left"></i>
+        </a>
         <h1 class="h5 mb-0">Settings</h1>
     </div>
 
